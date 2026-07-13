@@ -57,7 +57,7 @@ export default function About() {
                 <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                   <div style={{
                     width: 44, height: 44, borderRadius: 12, flexShrink: 0,
-                    background: 'rgba(124,58,237,0.2)', display: 'flex',
+                    background: 'rgba(201,147,58,0.2)', display: 'flex',
                     alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem',
                   }}>🎓</div>
                   <div>

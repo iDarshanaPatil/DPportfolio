@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import CursorSpotlight, { useCursorSpotlight } from './CursorSpotlight'
 
 const roles = [
   'Agentic AI Researcher',
   'Software Engineer',
   'MS CS Student @ UOP',
   '.NET & Azure Developer',
-    'VP of Data science club @ UOP',
+    'VP of Data Science Club @ UOP',
   'AI Agents & Autonomous agents Enthusiast',
 ]
 
@@ -13,6 +14,7 @@ export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)
   const [displayed, setDisplayed] = useState('')
   const [typing, setTyping] = useState(true)
+  const { active: spotlightActive, x, y, onMouseMove, onMouseLeave } = useCursorSpotlight()
 
   useEffect(() => {
     const current = roles[roleIndex]
@@ -42,25 +44,33 @@ export default function Hero() {
     <section id="hero" style={{
       minHeight: '100vh', display: 'flex', alignItems: 'center',
       paddingTop: 64, position: 'relative', overflow: 'hidden',
-    }}>
+    }}
+      onMouseMove={spotlightActive ? onMouseMove : undefined}
+      onMouseLeave={spotlightActive ? onMouseLeave : undefined}
+    >
+      {spotlightActive && <CursorSpotlight x={x} y={y} />}
       {/* Grid background */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 0,
         backgroundImage: `
-          linear-gradient(rgba(167,139,250,0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(167,139,250,0.04) 1px, transparent 1px)
+          linear-gradient(rgba(201,147,58,0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(201,147,58,0.04) 1px, transparent 1px)
         `,
         backgroundSize: '60px 60px',
         maskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%)',
       }} />
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <div style={{ maxWidth: 760 }}>
+        <div style={{
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          gap: 64, flexWrap: 'wrap',
+        }}>
+        <div style={{ maxWidth: 520, flex: '1 1 300px', minWidth: 0 }}>
           {/* Badge */}
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             padding: '6px 16px', borderRadius: 50, marginBottom: 32,
-            background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(124,58,237,0.3)',
+            background: 'rgba(201,147,58,0.15)', border: '1px solid rgba(201,147,58,0.3)',
             animation: 'fadeUp 0.6s ease both',
           }}>
             <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#4ade80',
@@ -75,7 +85,7 @@ export default function Hero() {
           {/* Name */}
           <h1 style={{
             fontFamily: 'var(--font-display)', fontWeight: 800,
-            fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', lineHeight: 1.05,
+            fontSize: 'clamp(2.4rem, 5vw, 4rem)', lineHeight: 1.05,
             marginBottom: 16, animation: 'fadeUp 0.6s ease 0.1s both',
           }}>
             Hi, I'm{' '}
@@ -146,6 +156,25 @@ export default function Hero() {
             ))}
           </div>
         </div>
+
+        {/* Photo column */}
+        <div style={{
+          flex: '0 0 auto', display: 'flex', justifyContent: 'flex-end', marginLeft: 'auto',
+          animation: 'fadeUp 0.6s ease 0.3s both',
+        }}>
+          <div style={{
+            width: 320, height: 380, borderRadius: 24, overflow: 'hidden',
+            border: '2px solid rgba(201,147,58,0.3)',
+            boxShadow: '0 0 48px rgba(201,147,58,0.18)',
+          }}>
+            <img
+              src="/profile.jpg"
+              alt="Darshana Patil"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+            />
+          </div>
+        </div>
+      </div>
       </div>
 
       {/* Scroll indicator */}
@@ -165,6 +194,11 @@ export default function Hero() {
       <style>{`
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
         @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+        @media (max-width: 768px) {
+          #hero .container > div { justify-content: center !important; }
+          #hero .container > div > div:last-child { margin: 0 auto !important; }
+          #hero .container > div > div:last-child > div { width: 260px !important; height: 310px !important; }
+        }
       `}</style>
     </section>
   )

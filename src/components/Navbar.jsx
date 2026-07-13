@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const links = ['about', 'skills', 'projects', 'experience', 'contact']
+const links = ['about', 'skills', 'projects', 'experience', 'books', 'contact']
 
 export default function Navbar({ scrollY }) {
   const [active, setActive] = useState('')
@@ -32,9 +32,9 @@ export default function Navbar({ scrollY }) {
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
       padding: '0 24px',
       transition: 'all 0.3s ease',
-      background: isScrolled ? 'rgba(5,3,15,0.85)' : 'transparent',
+      background: isScrolled ? 'rgba(8,8,15,0.85)' : 'transparent',
       backdropFilter: isScrolled ? 'blur(20px)' : 'none',
-      borderBottom: isScrolled ? '1px solid rgba(167,139,250,0.1)' : '1px solid transparent',
+      borderBottom: isScrolled ? '1px solid rgba(201,147,58,0.15)' : '1px solid transparent',
     }}>
       <div style={{
         maxWidth: 1100, margin: '0 auto',
@@ -56,30 +56,17 @@ export default function Navbar({ scrollY }) {
           className="desktop-nav">
           {links.map(id => (
             <button key={id} onClick={() => scrollTo(id)} style={{
-              background: 'none', border: 'none', cursor: 'pointer',
+              border: 'none', cursor: 'pointer',
               fontFamily: 'var(--font-display)', fontWeight: 600,
               fontSize: '0.85rem', letterSpacing: '0.05em',
               textTransform: 'capitalize', padding: '6px 14px', borderRadius: '50px',
               color: active === id ? '#fff' : 'var(--text-2)',
-              background: active === id ? 'rgba(124,58,237,0.3)' : 'transparent',
+              background: active === id ? 'rgba(201,147,58,0.25)' : 'transparent',
               transition: 'all 0.2s ease',
             }}>
               {id}
             </button>
           ))}
-          <a href="/resume.pdf" target="_blank" rel="noreferrer"
-            style={{
-              marginLeft: 8,
-              display: 'inline-flex', alignItems: 'center', gap: 6,
-              padding: '8px 20px', borderRadius: '50px',
-              fontFamily: 'var(--font-display)', fontWeight: 600,
-              fontSize: '0.85rem', textDecoration: 'none',
-              background: 'var(--grad-main)', color: '#fff',
-              boxShadow: '0 2px 16px rgba(124,58,237,0.4)',
-              transition: 'all 0.3s ease',
-            }}>
-            Resume ↗
-          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -94,7 +81,7 @@ export default function Navbar({ scrollY }) {
       {/* Mobile menu */}
       {menuOpen && (
         <div style={{
-          background: 'rgba(12,8,32,0.98)', borderTop: '1px solid var(--border)',
+          background: 'rgba(8,8,15,0.98)', borderTop: '1px solid var(--border)',
           padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: 8,
         }}>
           {links.map(id => (

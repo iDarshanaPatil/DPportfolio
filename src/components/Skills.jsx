@@ -5,37 +5,37 @@ const skillGroups = [
   {
     category: 'AI & Machine Learning',
     icon: '🤖',
-    color: '#a855f7',
+    color: '#D4A853',
     skills: ['LangChain', 'Agentic AI', 'BERT / RoBERTa', 'NLP', 'Sentiment Analysis', 'Azure Cognitive Services', 'RAG'],
   },
   {
     category: 'Backend & APIs',
     icon: '⚙️',
-    color: '#22d3ee',
+    color: '#C9933A',
     skills: ['C# / .NET', 'ASP.NET MVC', '.NET Core', 'REST APIs', 'Microservices', 'Entity Framework', 'xUnit'],
   },
   {
     category: 'Cloud & DevOps',
     icon: '☁️',
-    color: '#e879f9',
+    color: '#E8C97E',
     skills: ['Azure', 'Azure Service Bus', 'Azure DevOps', 'Git / GitLab', 'CI/CD', 'OAuth / JWT', 'OKTA'],
   },
   {
     category: 'Data & Databases',
     icon: '🗄️',
-    color: '#fbbf24',
+    color: '#A67C2E',
     skills: ['SQL Server', 'MongoDB', 'ClickHouse', 'Redis', 'ETL Pipelines', 'LINQ', 'SQL'],
   },
   {
     category: 'Languages',
     icon: '💻',
-    color: '#4ade80',
+    color: '#B8956A',
     skills: ['Python', 'C#', 'Java', 'JavaScript', 'HTML / CSS', 'SQL'],
   },
   {
     category: 'Methodologies',
     icon: '🔄',
-    color: '#f87171',
+    color: '#C9933A',
     skills: ['Agile / Scrum', 'Waterfall', 'Code Reviews', 'Unit Testing', 'Integration Testing', 'TDD'],
   },
 ]

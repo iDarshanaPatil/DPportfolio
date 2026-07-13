@@ -7,7 +7,7 @@ const experiences = [
     company: 'University of the Pacific',
     period: 'Jan 2026 – Present',
     type: 'Research',
-    color: '#a855f7',
+    color: '#D4A853',
     icon: '🔬',
     bullets: [
       'Researching and developing agentic AI systems using LangChain for multi-step reasoning and autonomous tool use.',
@@ -20,7 +20,7 @@ const experiences = [
     company: 'University of the Pacific',
     period: '2025 – Present',
     type: 'Leadership',
-    color: '#22d3ee',
+    color: '#C9933A',
     icon: '📊',
     bullets: [
       'Leading the Data Science Club, organizing workshops, speaker sessions, and hackathons.',
@@ -33,7 +33,7 @@ const experiences = [
     company: 'Cognizant Technology Solutions',
     period: 'Feb 2021 – Nov 2024',
     type: 'Full-Time',
-    color: '#e879f9',
+    color: '#E8C97E',
     icon: '💼',
     bullets: [
       'Novartis (2024): Built and maintained a .NET MVC web application for pharmaceutical inspection and testing.',
@@ -72,8 +72,8 @@ export default function Experience() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {experiences.map((e, i) => (
                 <button key={i} onClick={() => setActive(i)} style={{
-                  background: active === i ? 'rgba(124,58,237,0.2)' : 'transparent',
-                  border: `1px solid ${active === i ? 'rgba(124,58,237,0.5)' : 'transparent'}`,
+                  background: active === i ? 'rgba(201,147,58,0.15)' : 'transparent',
+                  border: `1px solid ${active === i ? 'rgba(201,147,58,0.4)' : 'transparent'}`,
                   borderLeft: `3px solid ${active === i ? e.color : 'transparent'}`,
                   borderRadius: 8, padding: '14px 16px',
                   cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s ease',
