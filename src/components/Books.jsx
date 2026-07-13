@@ -1,18 +1,19 @@
 import React from 'react'
 import FadeIn from './FadeIn'
+import { assetUrl } from '../utils/assetUrl'
 
 const books = [
   {
     title: 'Start with Why',
     author: 'Simon Sinek',
-    image: '/projects/StartwithWhy.png',
+    image: assetUrl('projects/StartwithWhy.png'),
     color: '#D4A853',
     takeaway: 'When you start with why — whether it\'s a career decision or an everyday life choice — you\'ll figure out how to do it anyway.',
   },
   {
     title: 'Do Epic Shit',
     author: 'Ankur Warikoo',
-    image: '/projects/DoepicShit.png',
+    image: assetUrl('projects/DoepicShit.png'),
     color: '#C9933A',
     takeaway: 'The best thing about this book is that there\'s no real start or end — you can open any page and just begin reading. Perfect for me who can\'t sit down for more than five minutes at a time 😅',
   },

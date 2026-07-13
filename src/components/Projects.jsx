@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import FadeIn from './FadeIn'
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { assetUrl } from '../utils/assetUrl'
 
 function ImageLightbox({ image, onClose }) {
   useEffect(() => {
@@ -109,7 +110,7 @@ const projects = [
     tags: ['Python', 'LangGraph', 'LangChain', 'FastAPI', 'Groq', 'React', 'TypeScript', 'Vite', 'Tailwind CSS', 'NIST NVD API'],
     color: '#B8956A',
     icon: '🛡️',
-    image: '/projects/cve-agent.png',
+    image: assetUrl('projects/cve-agent.png'),
     github: 'https://github.com/iDarshanaPatil/Software-Update-Prioritizer',
     highlights: [
       'Stateful multi-agent retrieval with structural evidence grounding across NIST NVD, ReleaseTrain, Reddit, and Google News',
@@ -127,7 +128,7 @@ const projects = [
     tags: ['React', 'Vite', 'React Router', 'Axios', 'Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT Authentication'],
     color: '#A67C2E',
     icon: '🎬',
-    image: '/projects/CineVibes.png',
+    image: assetUrl('projects/CineVibes.png'),
     github: 'https://github.com/comp227/final-cinevibes',
     highlights: [
       'Movie browsing with OMDB API integration (posters, titles, year, rating).',

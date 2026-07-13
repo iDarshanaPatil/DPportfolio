@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import CursorSpotlight, { useCursorSpotlight } from './CursorSpotlight'
+import { assetUrl } from '../utils/assetUrl'
 
 const roles = [
   'Agentic AI Researcher',
@@ -168,7 +169,7 @@ export default function Hero() {
             boxShadow: '0 0 48px rgba(201,147,58,0.18)',
           }}>
             <img
-              src="/profile.jpg"
+              src={assetUrl('profile.jpg')}
               alt="Darshana Patil"
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
             />
